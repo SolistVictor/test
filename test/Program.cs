@@ -14,6 +14,7 @@ namespace test
             String str = Console.ReadLine();
             Int32 number = Convert.ToInt32(str);                                                   
             if (number < 100)
+                asfasfaf
             {
                 Console.WriteLine("Читай внимательнее паскуда! Написанно же от 100 до 500.");
             }
