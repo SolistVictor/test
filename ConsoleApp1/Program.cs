@@ -10,32 +10,59 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Int32 x, y;
-            Console.Write("Введите длину - ");
-            x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Введите ширину - ");
-            y = Convert.ToInt32(Console.ReadLine());
-            if (x <= y)
-            {
-                Console.Write("Error");
-                Console.ReadKey();
-            }
-            for (int i = 1; i <= y; i++)
-            {
-                for (int j = 1; j <= x; j++)
-                {
-                    if (i > 1 && j > 1 && i < y  && j < x )
-                    {
-                        Console.Write("1");
-                    }
-                    else
-                        Console.Write("0");
+            int?[] a = new int?[4];
+            int?[] b = new int?[5];
+            int?[] c = new int?[4];
 
-                }
-                Console.WriteLine();
-            }
+            //FillArrayWithRandomNumbers(a);
+            //FillArrayWithRandomNumbers(b);
+
+            var counter = 0;
+            for (int i = 0; i < a.Length; i++)
+                for (int j = 0; j < b.Length; j++)
+                    if (a[i] == b[j] && !Contains(a[i], c))
+                    {
+                        c[counter] = a[i];
+                        counter++;
+                    }
+
+
+            for (int i = 0; i < c.Length; i++)
+                if(c[i] != 0)
+                    Console.WriteLine(c[i] + " ");
+            
+
+            //int n = 0;
+            //int m = 0;
+            //for (int i = 0; i < c.Length; i++)
+            //{
+            //    if (a[n] == b[m])
+            //    {
+            //        c[i] = a[n];
+            //        Console.WriteLine($"{c[n]}");
+            //    }
+            //    n++; m++;
+            //}
+
+
             Console.ReadKey();
         }
-        
+
+        private static bool Contains(int? element, int?[] target)
+        {
+            for (int k = 0; k < target.Length; k++)
+                if (target[k] == element)
+                    return true;
+            
+            return false;
+        }
+
+        private static void FillArrayWithRandomNumbers(int?[] array)
+        {
+            Random random = new Random();
+            for (int i = 0; i < array.Length; i++)
+                array[i] = random.Next(3);
+            
+        }
     }
-}
+    }
