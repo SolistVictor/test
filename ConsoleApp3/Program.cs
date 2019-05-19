@@ -10,14 +10,14 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            int[][] array = new int[2][] { new int[4], new int[5] };
+            int[,] array = new int[5, 5];
             Random random = new Random();
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < 5; i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < 5; j++)
                 {
-                    array[i][j] = random.Next(100);
-                    Console.Write($"{array[i][j]}\t\t");
+                    array[i,j] = random.Next(100);
+                    Console.Write($"{array[i,j]}\t\t");
                 }
                 Console.WriteLine();
             }
@@ -29,16 +29,12 @@ namespace ConsoleApp3
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
 
-                    if (max < array[j][i])
+                    if (max < array[j,i])
                     {
-                        max = array[j][i];
-
-
-                        //Console.WriteLine($"{i})  {max}");
-
+                        max = array[j,i];
                     }
                 }
-                Console.WriteLine(max);
+               Console.WriteLine(max);
             }
             Console.ReadKey();
         }
