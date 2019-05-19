@@ -10,12 +10,12 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            int?[] a = new int?[4];
-            int?[] b = new int?[5];
-            int?[] c = new int?[4];
+            int?[] a = new int?[14];
+            int?[] b = new int?[15];
+            int?[] c = new int?[14];
 
-            //FillArrayWithRandomNumbers(a);
-            //FillArrayWithRandomNumbers(b);
+            FillArrayWithRandomNumbers(a);
+            FillArrayWithRandomNumbers(b);
 
             var counter = 0;
             for (int i = 0; i < a.Length; i++)
@@ -61,7 +61,7 @@ namespace ConsoleApp1
         {
             Random random = new Random();
             for (int i = 0; i < array.Length; i++)
-                array[i] = random.Next(3);
+                array[i] = random.Next(10);
             
         }
     }
